@@ -4,8 +4,8 @@ const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
 
-const sauceRoutes = require('./routes/sauce');
-const userRoutes = require('./routes/user');
+const sauceRoutes = require('./routes/sauces');
+const userRoutes = require('./routes/users');
 
 // Connexion à la base de données
 mongoose.connect(process.env.MONGO_URL)
@@ -33,7 +33,7 @@ app.use(express.json());
  * ROUTES
  */
 app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use('/api/sauces', sauceRoutes);
+//app.use('/api/sauces', sauceRoutes);
 app.use('/api/auth', userRoutes);
 
 module.exports = app;
