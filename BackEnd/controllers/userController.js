@@ -6,7 +6,7 @@ const User = require('../models/modelUser'); // On importer le modèle modelsUse
 exports.registerUser = async (req, res) => {
     try {
         const { email, password } = req.body;
-
+        console.log(email);
         // on vérifier que tous les champs sont fournis:
        /* if (!email || !password) {
             return res.status(400).json({ message: "Veuillez fournir une adresse e-mail, un mot de passe et un nom d'utilisateur." });
